@@ -1,0 +1,35 @@
+<%-include('./templates/header.ejs')%>
+  <div class="background-login d-flex justify-content-center align-items-center">
+    <form id="RegisterFrom" action="" method="post">
+      <div class="box-container d-flex flex-column gap-3">
+        <h2 class="text-center">Đăng ký</h2>
+        <span class="error-message text-center" id="error-register"><%=message%></span>
+        <div class="box d-flex flex-column">
+          <label for="name">Họ và Tên</label>
+          <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn">
+          <span class="error" id="nameError"></span>
+          </div>
+        <div class="box d-flex flex-column">
+          <label for="email">Email </label>
+          <input type="text" id="email" name="email" placeholder="Nhập Email ">
+          <span class="error" id="emailError"></span>
+        </div>
+        <div class="box d-flex flex-column">
+          <label for="password">Mật Khẩu</label>
+          <input type="password" id="password" name="password" placeholder="Nhập Mật Khẩu">
+          <span class="error" id="passwordError"></span>
+        </div>
+        <div class="box d-flex flex-column">
+          <label for="password-repeat">Nhập Lại Mật Khẩu</label>
+          <input type="password" id="passwordRepeat" placeholder="Nhập Lại Mật Khẩu" name="passwordRepeat">
+          <span class="error" id="password-repeatError"></span>
+        </div>
+        <button id="submit">Đăng ký</button>
+        <div class="regis text-center">
+          <span>Bạn đã có tài khoản ? </span>
+          <a href="/?user/login">Đăng nhập</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <%-include('./templates/footer.ejs')%>

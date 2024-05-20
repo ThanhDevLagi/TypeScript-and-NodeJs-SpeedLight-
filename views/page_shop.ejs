@@ -1,0 +1,86 @@
+<%-include('./templates/header.ejs')%>
+<div class="banner-hero-commercial">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img loading="lazy" src="../../public/imges/banner1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img loading="lazy" src="../../public/imges/banner2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img loading="lazy" src="../../public/imges/banner3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="container-xxl container-shop" style="margin-top: 40px;">
+    <div class="row">
+      <div class="col-3 d-flex flex-column">
+        <span class="text-filter mb-3 fw-semibold">Lọc Doanh mục</span>
+        <div class="categories">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-teal text-white fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Thương hiệu 
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <form action="/shop" method="get">
+                 <ul class="categories-brand-name" id="categories">
+                  <% for(let item of getAllCategories){ %>
+                    <li>
+                      <label for="<%=item.name_category%>" data-id="<%=item.id_category%>"><%=item.name_category%></label>
+                      <input type="checkbox" id="<%=item.name_category%>" name="category" value="<%=item.id_category%>">
+                    </li>
+                  <% } %>
+                  </ul>
+                  <button type="submit" class="btn-filter">Lọc Sản Phẩm</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-9 ps-3 p-0">
+        <!-- <div class="loader" id="loader"></div> -->
+        <div class="container-shop-products" id="productshop">
+          <!-- Product-shop -->
+          <% for (let item of getAllProducts) { %>
+              <div class="product-shop">
+                <div class="image-product">
+                  <img loading="lazy" src="../../public/imges/products/<%= item.image %>" alt="">
+                  <div class="addto-cart">
+                    <button class="btn-addto-cart">Thêm vào giỏ hàng</button>
+                  </div>
+                </div>
+                <a href="/product/detail/<%= item.id %>" class="name-product"><%= item.name %></a>
+                <span class="price-product"><%= item.price.toLocaleString('vi-VN', {
+                  style: 'currency',
+                  currency: 'VND'
+                }) %></span>
+                <a class="buy-now" href="#">Mua ngay</a>
+              </div>
+          <% } %>
+          <!-- End Product-shop -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <%-include('./templates/footer.ejs')%>

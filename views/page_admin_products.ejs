@@ -1,0 +1,70 @@
+<%-include('./templates/header_admin.ejs')%>
+<div class="col-10" id="main-admin">
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <span>Primary</span>
+          <h2>Sản phẩm</h2>
+        </div>
+        <div class="search--box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Tìm kiếm tại đây">
+        </div>
+        <div class="user--info">
+          <div class="">
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="user-admin">
+            <img src="../../public/imges/personal-rate/person1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <a href="/admin/productCreate" class="ms-auto create-product mb-3">Tạo Sản phẩm</a>
+    </div>
+    <div class="products--admi-container d-flex flex-wrap gap-4" id="show-products-admin">
+        <%getAllProducts.forEach(item=>{ %>
+            <div class="products--admin d-flex flex-column gap-4 p-3">
+                <div class="products--top d-flex gap-3">
+                    <div class="products--img">
+                        <img loading="lazy" src="../../public/imges/products/<%=item.image%>" alt="img">
+                    </div>
+                    <div class="products--text d-flex flex-column justify-content-between">
+                      <span class="products--name title-medium"><%=item.name%></span>
+                      <div class="d-flex gap-1">
+                        <span>Doanh Mục:</span>
+                        <span>
+                            <%= item.brand === 1 ? 'Nike' : item.brand === 2 ? 'Puma' : item.brand === 3 ? 'Adidas' : 'Chưa cập nhật' %>
+                          </span>
+                      </div>
+                      <span><%=item.price.toLocaleString("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      })%></span>
+                    </div>
+                </div>
+                <div class="soild--product d-flex flex-column gap-4 p-3">
+                  <div class="d-flex justify-content-between">
+                    <span class="body-small">Đã bán</span>
+                    <span class="body-medium d-flex gap-1 justify-content-center">126<i class="fa-solid fa-arrow-up"></i></span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="body-small">Sản phẩm còn lại</span>
+                    <span class="body-medium">10</span>
+                  </div>
+                </div>
+                <div class="modify d-flex justify-content-between">
+                  <a href="/admin/detail/<%=item.id%>" class="button--edit">Chỉnh sửa</a>
+                  <a href="/admin/<%=item.id%>/delete" data-id="<%=item.id%>" id="deleteDB" class="btn" title="Xóa" style="display: inline-block; color: #00ABB3"><i class="fa-solid fa-trash"></i></a>
+                </div>
+              </div>
+       <% })%>
+        
+    </div>
+  </div>
+<%-include('./templates/footer_admin.ejs')%>
+  

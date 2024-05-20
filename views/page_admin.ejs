@@ -1,0 +1,107 @@
+<%-include('./templates/header_admin.ejs')%>
+  <div class="col-10" id="main-admin">
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <span>Primary</span>
+          <h2>Thống kê</h2>
+        </div>
+        <div class="search--box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Tìm kiếm tại đây">
+        </div>
+        <div class="user--info">
+          <div class="">
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="user-admin">
+            <img loading="lazy" src="../../public/imges/personal-rate/person1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="statistics-card">
+          <div class="statistics-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="statistics-text">
+            <span class="score-text">Tổng Sản Phẩm</span>
+            <span class="score">436</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="statistics-card">
+          <div class="statistics-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="statistics-text">
+            <span class="score-text">Sản Phẩm Đã Bán</span>
+            <span class="score">436</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="statistics-card">
+          <div class="statistics-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="statistics-text">
+            <span class="score-text">Sản Phẩm Đã Bán</span>
+            <span class="score">436</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="statistics-card">
+          <div class="statistics-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="statistics-text">
+            <span class="score-text">Sản Phẩm Đã Bán</span>
+            <span class="score">436</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-8">
+        <canvas id="myChart" style="width:100%;max-width:820px"></canvas>
+      </div>
+      <div class="col-4">
+        <div class="container--user p-3 d-flex flex-column gap-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="text--top">Top Buy</span>
+            <a href="">Xem Thêm</a>
+          </div>
+          <div class="body--user d-flex  align-items-center gap-2 justify-content-between">
+            <span>#1</span>
+            <div class="user--img">
+              <img loading="lazy" src="../../public/imges/personal-rate/person1.jpg" alt="">
+            </div>
+            <div class="user--text d-flex flex-column">
+              <span class="user--name">Cao Hoàng Thành</span>
+              <span class="user--role">Thành Viên</span>
+            </div>
+            <div class="user--connect ms-auto d-flex gap-3">
+              <button class="btn--connect bg-info bg-gradient">
+                <i class="fa-solid fa-user text-light"></i>
+              </button>
+              <button class="btn--connect bg-danger bg-gradient">
+                <i class="fa-solid fa-envelope text-light"></i>
+              </button>
+              <button class="btn--connect bg-success bg-gradient">
+                <i class="fa-solid fa-phone text-light"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%-include('./templates/footer_admin.ejs')%>

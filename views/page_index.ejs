@@ -1,0 +1,137 @@
+<%-include('./templates/header.ejs')%>
+<div class="main-web" id="main-web">
+    <!-- <div class="loader" id="loader"></div> -->
+    <div class="background width-full">
+      <div class="container-xxl ">
+        <div class="row">
+          <div class="col-8 d-flex align-items-center">
+            <div class="d-flex gap-3 flex-column" style="max-width: 650px;">
+              <div class="banner-Text">
+                <span class="main-hero-text">Bước Chân Thời Trang - Đôi Giày Đẳng Cấp Cho Bạn!</span>
+              </div>
+              <div class="description-banner">
+                <span class="derscription-hero-text">Không chỉ là nơi mua sắm, LightSpeed là ngôi nhà của những đôi giày
+                  đẳng cấp. Hãy để chúng tôi giúp bạn bước chân tự tin trên mọi hành trình!</span>
+              </div>
+              <div class="button-banner d-flex gap-4">
+                <a href="" class="see-more">
+                  <button class="button-hero d-flex align-items-center gap-2">Khám phá ngay <i
+                      class="fa-solid fa-arrow-right"></i></button>
+                </a>
+                <a href="" class="see-more">
+                  <button class="button-hero-info">Tìm hiểu hơn</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide mt-3 d-flex" data-bs-ride="carousel">
+              <div class="carousel-inner" style="border-radius: 20px;">
+                <div class="carousel-item active">
+                  <img loading="lazy" src="../../public/imges/image2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img loading="lazy" src="../../public/imges/8a298f0106a522949f7b7b7d1a49d0ee.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img loading="lazy" src="../../public/imges/image.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-indicators" style="margin-bottom: 2rem;">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Banner -->
+    <div class="container-xxl mt-4">
+      <h1 class="section-trending-product mb-2 fw-semibold">Sản phẩm nổi bật</h1>
+      <div id="product-trending" class="products-container-trending d-flex flex-row-wrap justify-content-lg-between">
+        <!-- Products trending -->
+        <%productsByDiscountTrue.forEach(item=>{ %>
+          <div class="card border-0 product d-flex flex-column gap-2">
+            <div class="image-product">
+              <div class="onsale">Ưu đãi</div>
+              <img loading="lazy" src="../../public/imges/products/<%=item.image%>" alt="">
+              <div class="addto-cart">
+                <button id="addCart" data-product-id="<%=item.id%>" class="btn-addto-cart">Thêm vào giỏ hàng</button>
+              </div>
+            </div>
+            <a href="/product/detail/<%=item.id%>" class="name-product"><%=item.name%></a>
+            <span class="price-product"><%=item.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%></span>
+            <a class="buy-now" id="addCartDirect" data-product-id=""  href="/products/detail/">Mua ngay</a>
+          </div>
+        <% });%>
+       
+        <!-- End products trending -->
+      </div>
+      <!-- Content -->
+      <div class="width-full" style="margin-top: 90px;">
+        <div class="content-container container-xxl d-flex gap-5 flex-column ">
+          <div class="d-flex gap-5 justify-content-lg-between">
+            <div class="text-content d-flex align-items-center flex-column justify-content-center">
+              <span class="main-content-text">Đa Dạng và Phát Triển Hàng Ngày:</span>
+              <p class="small-content-text">Khám phá bộ sưu tập đa dạng với hàng ngàn mẫu giày từ các thương hiệu hàng đầu
+                như Nike, Adidas, Puma, và nhiều hơn nữa. Chúng tôi không ngừng cập nhật xu hướng mới để bạn luôn ở bước
+                chân của thời đại.</p>
+            </div>
+            <div class="content-img">
+              <img loading="lazy" src="../../public/imges/content2.jpg" alt="">
+            </div>
+          </div>
+          <div class="d-flex gap-5 justify-content-lg-between">
+            <div class="content-img">
+              <img loading="lazy" src="../../public/imges/content4.jpg" alt="">
+            </div>
+            <div class="col-5 text-content d-flex align-items-center flex-column justify-content-center">
+              <span class="main-content-text">Chất Lượng Đỉnh Cao:</span>
+              <p class="small-content-text">Với SpeedLight, chất lượng là trên hết. Mọi đôi giày đều được chọn lọc kỹ
+                lưỡng, đảm bảo sự thoải mái và độ bền vượt trội. Mỗi bước chân của bạn đều là một tuyên bố về phong cách
+                và đẳng cấp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Content -->
+      <!-- product-small -->
+      <div class="container-xxl mt-5">
+        <div class="container-product d-flex gap-4">
+          <div class="col-3 product-right">
+            <div class="big-product d-flex flex-column mt-3">
+              <div class="img-big-product">
+                <img loading="lazy" src="../../public/imges/products/bigproduct.jpg" alt="">
+              </div>
+            </div>
+          </div>
+            <div class="product-left">
+              <h1 class="section-trending-product text-center mb-3 fw-semibold">Các sản phẩm mới</h1>
+              <div  class="products-container-small gap-1 d-flex flex-wrap" id="product-small">
+              <%productsByDiscountFalse.forEach(item=>{ %>
+                <div class="product-small d-flex flex-column gap-2">
+                  <div class="image-product-small image-product">
+                    <img loading="lazy" src="../../public/imges/products/<%=item.image%>" alt="">
+                    <div class="addto-cart">
+                      <button class="btn-addto-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                  </div>
+                  <a href="/product/detail/<%=item.id%>" class="name-product-small text-center"><%=item.name%></a>
+                  <span class="price-product"><%=item.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })%></span>
+                  <a class="buy-now" href="#">Mua ngay</a>
+                </div>
+              <%  })%>
+              </div>
+            </div>
+          
+        </div>
+        <!-- End product-small -->
+      </div>
+    </div>  
+  </div>
+<%-include('./templates/footer.ejs')%>

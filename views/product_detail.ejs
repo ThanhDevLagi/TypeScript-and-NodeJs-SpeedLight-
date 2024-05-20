@@ -1,0 +1,88 @@
+<%-include('./templates/header.ejs')%>
+  <div class="container-xxl" style="padding: 30px 0;">
+    <nav
+      style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+      aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chi Tiết Sản Phẩm</li>
+      </ol>
+    </nav>
+    <div class="width-full">
+      <form action="" method="post">
+        <div class="product-detail row" id="product-detail">
+          <div class="col-lg-6">
+            <div class="img-product-detail d-flex gap-3">
+              <div class="container-small-product-detail d-flex flex-column  align-items-center justify-content-between">
+                <div class="img-small-product-d">
+                  <img loading="lazy" src="../../public/imges/products/product1.jpg" alt="">
+                </div>
+                <div class="img-small-product-d">
+                  <img loading="lazy" src="../../public/imges/products/product2.jpg" alt="">
+                </div>
+                <div class="img-small-product-d">
+                  <img loading="lazy" src="../../public/imges/products/3.jpg" alt="">
+                </div>
+              </div>
+              <div class="img-big-product-d">
+                <img loading="lazy" src="../../public/imges/products/<%=detailProduct.image%>" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="info-product-detail d-flex flex-column gap-4">
+              <div class="text-head-product d-flex gap-2 flex-column">
+                <div class="name-product-d">
+                  <span class="name_p-d">
+                    <%=detailProduct.name%>
+                  </span>
+                </div>
+                <div class="category-product-d d-flex gap-4">
+                  <span>Hãng sản phẩm:</span>
+                  <span>
+                    <%= detailProduct.brand===1 ? 'Nike' : detailProduct.brand===2 ? 'Puma' : detailProduct.brand===3
+                      ? 'Addidas' : 'Chưa cập nhật' %>
+                  </span>
+                </div>
+                <div class="description-product-d">
+                  <p class="description-product-detail">
+                    <%=detailProduct.description%>
+                  </p>
+                </div>
+                <div class="price-product-d">
+                  <span class=""><%=detailProduct.price.toLocaleString('vi-VN', { style: 'currency' , currency: 'VND'
+                      })%></span>
+                </div>
+              </div>
+              <div class="body-product-detail d-flex flex-column gap-2">
+                <!-- <span class="size-text"> kích cỡ</span>
+                <div class="product-quantity">
+                  <div class="size-product-d">
+                    <button class="custom-button active">1</button>
+                    <button class="custom-button">2</button>
+                    <button class="custom-button">3</button>
+                    <button class="custom-button">4</button>
+                    <button class="custom-button">5</button>
+                    <button class="custom-button">5</button>
+                    <button class="custom-button">5</button>
+                  </div> -->
+              </div>
+            </div>
+            <div class="foot-product-detail d-flex gap-4">
+              <div class="quality-product-d">
+                <button class="quantity-btn increment-btn"><i class="fa-solid fa-angle-up"></i></button>
+                <input type="number" class="quantity-input" name="quantity" id="quantity" min="1" value="1">
+                <button class="quantity-btn decrement-btn"><i class="fa-solid fa-angle-down"></i></button>
+              </div>
+              <button type="submit" class="btn-buynow">Mua Ngay</button>
+              <button class="heart-addtocart" id="heart-btn">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <%-include('./templates/footer.ejs')%>

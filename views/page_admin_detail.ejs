@@ -1,0 +1,73 @@
+<%-include('./templates/header_admin.ejs')%>
+<div class="col-10" id="main-admin">
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <span>Primary</span>
+          <h2>Chi Tiết Sản Phẩm</h2>
+        </div>
+        <div class="search--box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Tìm kiếm tại đây">
+        </div>
+        <div class="user--info">
+          <div class="">
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="user-admin">
+            <img src="../../public/imges/personal-rate/person1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detail--container round p-4">
+      <form id="formDetails" action="/admin/detail/<%=detailProduct.id%>"  method="post">
+        <div class="error-span d-flex justify-content-center align-items-center mb-3">
+          <span id="error-name" class="text-center text-danger body-medium"></span>
+          <span id="succeed-name" class="text-center text-success body-medium"></span>
+        </div>
+        <div class="row d-flex justify-content-between gap-3">
+          <div class="col-7 d-flex flex-column gap-3">
+              <div class="d-flex flex-column gap-2">
+                  <label for="name" class="form-label">Tên Sản Phẩm:</label>
+                  <input id="name" name="name" class="p-2 round border-1 border-grey" type="text" placeholder="<%=detailProduct.name%>" value="<%=detailProduct.name%>">
+              </div>
+              <div class="d-flex flex-column gap-2">
+                  <label for="categorySelect" class="form-label">Thương Hiệu:</label>
+                  <select class="p-2 round border-1 border-grey" name="brand" id="categorySelect" >
+                    <% categoriesValue.forEach(item => { %>
+                        <option value="<%= item.id_category %>" <%= detailProduct.brand === item.id_category ? 'selected' : '' %>><%= item.name_category %></option>
+                      <% }) %>
+                    
+                  </select>
+              </div>
+              <div class="d-flex gap-2 flex-column">
+                <label for="description" class="form-label">Mô Tả:</label>
+                <textarea class="p-2 round border-1 border-grey" name="description" id="description" cols="30" rows="10" placeholder="Nhập mô tả sản phẩm"><%= detailProduct.description %></textarea>
+              </div>
+              <div class="row">
+                <div class="col-6 col-auto d-flex flex-column">
+                  <label for="price" class="form-label">Giá:</label>
+                  <input id="price" name="price" class="p-2 round border-1 border-grey" type="text" placeholder="<%=detailProduct.price.toLocaleString('vi-VN', { style: 'currency',
+                  currency: 'VND',})%>" value="<%=detailProduct.price%>">
+                </div>
+                <div class="col-6 col-auto d-flex flex-column">
+                  <label for="price-coupon" class="form-label">Giá Khuyến mãi:</label>
+                  <input id="price-coupon" class="p-2 round border-1 border-grey" type="text" placeholder="1000đ">
+                </div>
+              </div>
+          </div>
+          <div class="col-5 col-md d-flex flex-column gap-4">
+              <div class="image--products-detail">
+                <img src="../../public/imges/products/<%=detailProduct.image%>" name="img" id="img" class="round"  alt="">
+              </div>
+              <button type="submit" class="btn-buynow">Sữa Sản Phẩm</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+<%-include('./templates/footer_admin.ejs')%>

@@ -1,0 +1,71 @@
+<%-include('./templates/header_admin.ejs')%>
+<div class="col-10" id="main-admin">
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <span>Primary</span>
+          <h2>Đơn Hàng</h2>
+        </div>
+        <div class="search--box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Tìm kiếm tại đây">
+        </div>
+        <div class="user--info">
+          <div class="">
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="user-admin">
+            <img src="../../public/imges/personal-rate/person1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>ID User</th>
+                <th>Tên Người Đặt</th>
+                <th>Sản Phẩm</th>
+                <th>Tổng Tiền</th>
+                <th>Ngày Đặt</th>
+                <th>Trạng Thái</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="showbill">
+                <% orders.forEach(item => { %>
+                    <tr>
+                        <td># <%= item.id %></td>
+                        <td># <%= item.id_user %></td>
+                        <td>
+                            <%= item.products.length %>
+                        </td>
+                        
+                        <td><%= item.total.toLocaleString("vi-VN", { style: "currency", currency: "VND" }) %></td>
+                        <td>
+                          <span><%= item.date %></span>
+                        </td>
+                        <td class="status">
+                            <div class="status-wait">
+                                <span><%= item.status %></span>
+                            </div>
+                        </td>
+                 
+                        
+                        <td style="width: 170px;">
+                            <button type="button" class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<%= item.id_user %>">Chỉnh Sửa</button>
+                            <button type="button" class="btn btn-danger edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<%= item.id_user %>">Xóa</button>
+
+                        </td>
+                    </tr>
+                <% }) %>
+               
+            <tbody>
+        </table>
+    </div>
+  </div>
+<%-include('./templates/footer_admin.ejs')%>

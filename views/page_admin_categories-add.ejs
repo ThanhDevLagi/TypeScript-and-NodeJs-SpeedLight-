@@ -1,0 +1,55 @@
+<%-include('./templates/header_admin.ejs')%>
+<div class="col-10" id="main-admin">
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <span>Primary</span>
+          <h2>Tạo Danh Mục</h2>
+        </div>
+        <div class="search--box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Tìm kiếm tại đây">
+        </div>
+        <div class="user--info">
+          <div class="">
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="user-admin">
+            <img src="../../public/imges/personal-rate/person1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detail--container round p-4">
+      <span class="error-message text-center" id="error-register"><%=message%></span>
+      <form id="formCreate" action="/admin/createCategories" method="post">
+        <div class="error-span d-flex justify-content-center align-items-center mb-3">
+          <span id="error-name" class="text-center text-danger body-medium"></span>
+          <span id="succeed-name" class="text-center text-success body-medium"></span>
+        </div>
+        <div class="row d-flex justify-content-between gap-3">
+          <div class="col-7 d-flex flex-column gap-3">
+              <div class="d-flex flex-column gap-2">
+                  <label for="idCategory" class="form-label">ID Danh Mục:</label>
+                  <input id="idCategory" name="idCategory" class="p-2 round border-1 border-grey form-control" type="text" placeholder="Nhập tên sản phẩm">
+              </div>
+              <div class="d-flex flex-column gap-2">
+                  <label for="name" class="form-label">Tên Danh Mục:</label>
+                  <input id="name" name="name" class="p-2 round border-1 border-grey form-control" type="text" placeholder="Nhập tên sản phẩm">
+              </div>
+              <button type="submit" class="btn-buynow">Tạo Danh Mục</button>
+          </div>
+          <div class="col-5 col-md d-flex flex-column gap-4">
+              <div class="image--products-detail">
+                <img id="img" src="../../public/imges/AddProduct.jpg" class="round"  alt="">
+              </div>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+<%-include('./templates/footer_admin.ejs')%>

@@ -1,0 +1,135 @@
+<%-include('./templates/header.ejs')%>
+  <div class="container-xxl mt-5">
+    <div class="row">
+      <div class="col-12">
+        <span class="cart-web">Giỏ Hàng Sản Phẩm</span>
+      </div>
+      <div class="col-12 col-xl-8">
+        <div class="mb-5">
+          <div class="float-end delete-all-cart" id="delete-all-cart">
+            <i class="fa-solid fa-trash mr-2"></i>
+            <span>Xóa giỏ hàng</span>
+          </div>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="td-img">Sản phẩm</th>
+              <th></th>
+              <th class="td-price text-center">Giá</th>
+              <th class="text-center td-qty">Số lượng</th>
+              <th class="text-center">Tổng</th>
+              <th class="text-center td-action">Tổng</th>
+            </tr>
+          </thead>
+          <tbody id="showCart">
+            <!-- Cart -->
+            <% cart.products.forEach(item => { %>
+              <tr>
+                <td align="center" class="td-img">
+                  <div class="img-product-cart">
+                    <img src="../../public/imges/products/<%=item.image%>" alt="">
+                  </div>
+                </td>
+                <td class="td-product_name">
+                  <span>
+                    <%=item.name%>
+                  </span>
+                </td>
+                <td class="text-center td-price">
+                  <span style="white-space: nowrap;" id="price">
+                    <%= item.price ? item.price.toLocaleString("vi-VN", { style: "currency" , currency: "VND" , }) : "" %>
+                  </span>
+                </td>
+                <td class="text-center td-qty">
+                  <div class="quality-product-d align-items-center justify-content-center">
+                    <a href="/cart/<%=item.id%>/up" class="quantity-btn d-flex align-items-center justify-content-center increment-btn" data-product-id="<%=item.id%>"><i class="fa-solid fa-angle-up"></i></a>
+                    <input type="text" class="quantity-input" min="1" value="<%=item.quantity%>" id="quantity-<%=item.id%>">
+                    <a href="/cart/<%=item.id%>/down" class="quantity-btn  d-flex align-items-center justify-content-center decrement-btn" data-product-id="<%=item.id%>"><i class="fa-solid fa-angle-down"></i></a>
+                  </div>
+                </td>
+                <td class="text-center td-price">
+                  <span class="total-price" id="total-<%=item.id%>"><%= (item.quantity * item.price).toLocaleString('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                  }) %></span>
+                </td>
+                <td class="td-action text-center">
+                  <a href="/cart/<%=item.id%>/delete" class="delete-sigle-cart" data-product-id="<%=item.id%>" aria-label="Xóa khỏi giỏ hàng" title="Xóa khỏi giỏ hàng">
+                    <small><i class="fa-solid fa-trash"></i></small>
+                  </a>
+                </td>
+              </tr>
+              <% }) %>
+             
+
+
+          </tbody>
+          <!-- End Cart -->
+        </table>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="bill-checkout">
+          <div class="cart-body p-3">
+            <div class="cart-head">
+              <h4 class="d-none d-xl-block text-end">Tổng đơn hàng</h4>
+              <hr class="d-none d-xl-block">
+            </div>
+            <div class="cart-total d-flex">
+              <table class="table table-cart">
+                <tbody>
+                  <tr id="empty">
+                    <td class="col-md-2 col-3 border-0"></td>
+                    <td class="col-md-2 col-3 border-0"></td>
+                  </tr>
+                  <tr id="order_total_untaxed">
+                    <td class="text-start border-0">Tổng phụ: </td>
+                    <td class="text-end border-0">
+                      <span class="monetary_field" style="white-space: nowrap;">99.000đ</span>
+                    </td>
+                  </tr>
+                  <tr id="order_total_taxes">
+                    <td class="text-start border-0">Thuế: </td>
+                    <td class="text-end border-0">
+                      <span class="monetary_field" style="white-space: nowrap;">0đ</span>
+                    </td>
+                  </tr>
+                  <tr id="order_total">
+                    <td class="text-start"><strong>Tổng:</strong></td>
+                    <td class="text-end">
+                      <strong id="total-money-checkbill" class="monetary_field">
+                        <span class="oe_currency_value"><%= total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></span>
+                    </strong>
+                    
+                    </td>
+                  </tr>
+                  <tr id="order_coupon">
+                    <td colspan="3" class="text-center text-xl-right border-0">
+                      <div class="coupon_form">
+                        <form method="post" name="coupon_code" action="">
+                          <div class="input-group w-100">
+                            <input name="promo" class="form-control" type="text" placeholder="mã...">
+                            <div class="input-group-append">
+                              <a href="#" role="button" class="btn-submit">Áp dụng</a>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr id="order_coupon">
+                    <td colspan="3" class="text-center text-xl-right border-0">
+                      <div class="coupon_form">
+                        <a href="/cart/bill" role="button" class="btn-submit round-1 rounded">Thanh toán</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%-include('./templates/footer.ejs')%>

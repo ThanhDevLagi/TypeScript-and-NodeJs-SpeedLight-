@@ -1,0 +1,354 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Cao Hoang Thanh",
+      "email": "thanh@gmail.com",
+      "password": "123456",
+      "role": "Admin"
+    },
+    {
+      "id": "2",
+      "name": "ThanhDev",
+      "email": "thanhdev@gmail.com",
+      "password": "123456",
+      "role": "User"
+    },
+    {
+      "id": "7fdf",
+      "email": "admin123@gmail.com",
+      "name": "MorningFood",
+      "password": "123456",
+      "role": "User"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Giày Nike G-Dragon x Kwondo 1 'Yin-Yang' Peaceminusone 'Panda' DH2482",
+      "brand": 1,
+      "price": 1800000,
+      "image": "1.jpg",
+      "description": "Đón đầu xu hướng thời trang và thoải mái suốt cả ngày, đôi giày sneaker này không chỉ là một phần của bộ sưu tập, mà còn là biểu tượng của phong cách cá nhân. Với thiết kế hiện đại, chất liệu độ bền cao, và đệm êm ái, chúng mang lại sự thoải mái và phong cách đồng thời. Hãy trải nghiệm sự thoải mái và tự tin mỗi bước chân với đôi giày này",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": true
+    },
+    {
+      "id": "2",
+      "name": "Giày Nike Travis Scott x Wmns Air Jordan 1 Retro Low OG ‘Olive’ DZ4137-106",
+      "brand": 1,
+      "price": 1800000,
+      "image": "2.jpg",
+      "description": "Mua Giày Nike Travis Scott x Wmns Air Jordan 1 Retro Low OG ‘Olive’ DZ4137-106 chính hãng 100% tại SpeedLight Trả góp 0%. Bảo hành 3 tháng, đổi trả 15 ngày. Freeship",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": true
+    },
+    {
+      "id": "3",
+      "name": "Giày Adidas Samba OG ‘White Black Gum’ B75806",
+      "brand": 3,
+      "price": 3300000,
+      "image": "3.jpg",
+      "description": "Đầu tiên, thiết kế của đôi giày này mang trong mình sự kết hợp tinh tế giữa phong cách cổ điển và hiện đại. Với dáng vẻ thể thao và đường nét gọn gàng, chúng phù hợp với nhiều phong cách thời trang khác nhau.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": true
+    },
+    {
+      "id": "4",
+      "name": "Giày Nike Air Jordan 1 Mid ‘Smoke Grey’ 554724-092",
+      "brand": 1,
+      "price": 6000000,
+      "image": "4.jpg",
+      "description": "Đầu tiên, thiết kế của đôi giày này mang trong mình sự kết hợp tinh tế giữa phong cách cổ điển và hiện đại. Với dáng vẻ thể thao và đường nét gọn gàng, chúng phù hợp với nhiều phong cách thời trang khác nhau.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": true
+    },
+    {
+      "id": "5",
+      "name": "Giày Nike AMBUSH x Air Force 1 Low ‘Phantom’ DV3464-002",
+      "brand": 1,
+      "price": 6900000,
+      "image": "product2.jpg",
+      "description": "Nike Air Force 1 Low SP AMBUSH Phantom DV3464-002 là một phiên bản đặc biệt hợp tác giữa hai thương hiệu nổi tiếng là Nike và AMBUSH. Đôi giày này mang đến một diện mạo mới mẻ và độc đáo, làm say đắm lòng các tín đồ sneakerhead và người yêu thời trang.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": true
+    },
+    {
+      "id": "6",
+      "name": "Giày Nike Air Jordan 1 Low GS ‘Vintage Grey’ 553560-053",
+      "brand": 1,
+      "price": 3500000,
+      "image": "6.jpg",
+      "description": "Nike Air Force 1 Low SP AMBUSH Phantom DV3464-002 là một phiên bản đặc biệt hợp tác giữa hai thương hiệu nổi tiếng là Nike và AMBUSH. Đôi giày này mang đến một diện mạo mới mẻ và độc đáo, làm say đắm lòng các tín đồ sneakerhead và người yêu thời trang.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "7",
+      "name": "Giày Nike Air Jordan 1 Low ‘Vintage Grey’ 553558-053",
+      "brand": 1,
+      "price": 4500000,
+      "image": "7.jpg",
+      "description": "Nike Air Force 1 Low SP AMBUSH Phantom DV3464-002 là một phiên bản đặc biệt hợp tác giữa hai thương hiệu nổi tiếng là Nike và AMBUSH. Đôi giày này mang đến một diện mạo mới mẻ và độc đáo, làm say đắm lòng các tín đồ sneakerhead và người yêu thời trang.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "8",
+      "name": "Giày Nike Air Jordan 1 Retro High OG ‘Chicago Lost & Found’ DZ5485-612",
+      "brand": 1,
+      "price": 10990000,
+      "image": "8.jpg",
+      "description": "Air Jordan 1 Retro High OG Lost and Found DZ5485-612 với phối màu mãn nhãn lần này dự kiến sẽ gây được tiếng vang dữ dội. Màu đỏ – Varsity Red trải đều các mặt, màu đen xuất hiện ở dây giày và Swoosh trên nền trắng của má ngoài, mũi giày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "9",
+      "name": "Giày Nike Air Jordan 1 Low ‘Light Smoke Grey’ 553558 030",
+      "brand": 1,
+      "price": 3900000,
+      "image": "9.jpg",
+      "description": "Air Jordan 1 Retro High OG Lost and Found DZ5485-612 với phối màu mãn nhãn lần này dự kiến sẽ gây được tiếng vang dữ dội. Màu đỏ – Varsity Red trải đều các mặt, màu đen xuất hiện ở dây giày và Swoosh trên nền trắng của má ngoài, mũi giày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "10",
+      "name": "Giày Nike Wmns Air Jordan 1 Low ‘White Wolf Grey’ DC0774 105",
+      "brand": 1,
+      "price": 3500000,
+      "image": "10.jpg",
+      "description": "Air Jordan 1 Retro High OG Lost and Found DZ5485-612 với phối màu mãn nhãn lần này dự kiến sẽ gây được tiếng vang dữ dội. Màu đỏ – Varsity Red trải đều các mặt, màu đen xuất hiện ở dây giày và Swoosh trên nền trắng của má ngoài, mũi giày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "11",
+      "name": "Giày Nike Wmns Air Force 1 Shadow ‘Orange Chalk Pink Glaze’ CI0919 111",
+      "brand": 1,
+      "price": 3600000,
+      "image": "11.jpg",
+      "description": "Air Jordan 1 Retro High OG Lost and Found DZ5485-612 với phối màu mãn nhãn lần này dự kiến sẽ gây được tiếng vang dữ dội. Màu đỏ – Varsity Red trải đều các mặt, màu đen xuất hiện ở dây giày và Swoosh trên nền trắng của má ngoài, mũi giày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "12",
+      "name": "Giày Nike Air Jordan 1 Mid ‘University Blue’ (W) BQ6472-141",
+      "brand": 1,
+      "price": 5500000,
+      "image": "12.jpg",
+      "description": "Air Jordan 1 Retro High OG Lost and Found DZ5485-612 với phối màu mãn nhãn lần này dự kiến sẽ gây được tiếng vang dữ dội. Màu đỏ – Varsity Red trải đều các mặt, màu đen xuất hiện ở dây giày và Swoosh trên nền trắng của má ngoài, mũi giày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "13",
+      "name": "Giày Puma PWRFRAME TR 2 NAM - ĐEN XANH",
+      "brand": 2,
+      "price": 1890000,
+      "image": "13.jpg",
+      "description": "Giày Puma PWRFrame TR 2 mẫu giày training có thiết kế rất đẹp cùng với những công nghệ cao cấp của Puma. Đây chính là mẫu giày đa năng tuyệt vời cho luyện tập thể thao, tập gym và các hoạt động hàng ngày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "14",
+      "name": "Giày Nam PUMA X MERCEDES BENZ MIRAGE SPORT ASPHALT (ĐEN/XANH SPECTRA)",
+      "brand": 2,
+      "price": 2520000,
+      "image": "14.jpg",
+      "description": "Giày Puma PWRFrame TR 2 mẫu giày training có thiết kế rất đẹp cùng với những công nghệ cao cấp của Puma. Đây chính là mẫu giày đa năng tuyệt vời cho luyện tập thể thao, tập gym và các hoạt động hàng ngày.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "15",
+      "name": "Giày ADIDAS ULTRABOOST LIGHT Nam - Xám Đen Xanh",
+      "brand": 3,
+      "price": 3690000,
+      "image": "15.jpg",
+      "description": "Giày adidas Ultraboost Light siêu phẩm giày thể thao mới nhất đến từ nhà adidas, với vật liệu và công nghệ tốt nhất được áp dụng tối đa cho sản này adidas Ultraboost Light xứng đáng trở thành niềm mơ ước của tín đồ giày thể thao chạy bộ.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "16",
+      "name": "Giày PUMA RS-TRCK Màu Nam (Đa)",
+      "brand": 2,
+      "price": 2520000,
+      "image": "16.jpg",
+      "description": "Giày adidas Ultraboost Light siêu phẩm giày thể thao mới nhất đến từ nhà adidas, với vật liệu và công nghệ tốt nhất được áp dụng tối đa cho sản này adidas Ultraboost Light xứng đáng trở thành niềm mơ ước của tín đồ giày thể thao chạy bộ.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "17",
+      "name": "Giày Puma WILD RIDER MID WS (Đen - Xanh lá)",
+      "brand": 2,
+      "price": 2520000,
+      "image": "17.jpg",
+      "description": "Giày adidas Ultraboost Light siêu phẩm giày thể thao mới nhất đến từ nhà adidas, với vật liệu và công nghệ tốt nhất được áp dụng tối đa cho sản này adidas Ultraboost Light xứng đáng trở thành niềm mơ ước của tín đồ giày thể thao chạy bộ.",
+      "size": [
+        "30",
+        "35",
+        "44",
+        "56",
+        "60"
+      ],
+      "discount": false
+    },
+    {
+      "id": "ee82",
+      "quantity": 0,
+      "name": "Giày Adidas Samba OG ‘White Black Gum’ B75806 123",
+      "price": 1000000123,
+      "brand": 2,
+      "image": "1712076327935-10.jpg",
+      "description": "asdasdasd asdasd ",
+      "discount": false
+    }
+  ],
+  "categories": [
+    {
+      "id_category": 1,
+      "name_category": "Nike",
+      "id": "9218"
+    },
+    {
+      "id_category": 2,
+      "name_category": "Puma",
+      "id": "1f8f"
+    },
+    {
+      "id_category": 3,
+      "name_category": "Addidas",
+      "id": "a43b"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1640",
+      "id_user": "1",
+      "products": [
+        {
+          "id": "1",
+          "name": "Giày Nike G-Dragon x Kwondo 1 'Yin-Yang' Peaceminusone 'Panda' DH2482",
+          "brand": 1,
+          "price": 1800000,
+          "image": "1.jpg",
+          "description": "Đón đầu xu hướng thời trang và thoải mái suốt cả ngày, đôi giày sneaker này không chỉ là một phần của bộ sưu tập, mà còn là biểu tượng của phong cách cá nhân. Với thiết kế hiện đại, chất liệu độ bền cao, và đệm êm ái, chúng mang lại sự thoải mái và phong cách đồng thời. Hãy trải nghiệm sự thoải mái và tự tin mỗi bước chân với đôi giày này",
+          "size": [
+            "30",
+            "35",
+            "44",
+            "56",
+            "60"
+          ],
+          "discount": true,
+          "quantity": 1
+        }
+      ],
+      "total": 1800000,
+      "date": "2024-04-05",
+      "status": "order"
+    }
+  ]
+}

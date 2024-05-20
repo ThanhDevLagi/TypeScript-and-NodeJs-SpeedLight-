@@ -1,0 +1,120 @@
+<%-include('./templates/header.ejs')%>
+<div class="container-xxl" style="padding: 30px 0;">
+    <div class="row">
+      <div class="col-xl-12 d-flex align-items-center justify-content-between">
+        <h1 class="text-big">Thanh Toán</h1>
+        <div class="float-end">
+          <a href="/?page/home" class="d-flex gap-2 align-items-center"><i class="fa-solid fa-arrow-left"></i>Tiếp tục mua
+            hàng</a>
+        </div>
+      </div>
+      <div class="col-12 d-flex align-items-center justify-content-center mb-4">
+        <span id="success" class="body-medium text-success text-center"></span>
+      </div>
+      <div class="col-lg-7">
+        <div class="d-flex flex-column gap-3">
+            <div class="container--form d-flex flex-column gap-3">
+              <div class="d-flex justify-content-between align-items-center gap-3">
+                <div class="div--box div--name col-xl-5 d-flex flex-column gap-1">
+                  <label for="">Nhập họ và tên</label>
+                  <input type="text" placeholder="Họ và tên">
+                </div>
+                <div class="div--box div--phone col-xl-5 d-flex flex-column gap-1">
+                  <label for="">Nhập số điện thoại</label>
+                  <input type="text" placeholder="+03">
+                </div>
+              </div>
+              <div class="div--box div--email d-flex flex-column gap-2">
+                <label for="">Email</label>
+                <input type="text" placeholder="@Email của bạn">
+              </div>
+              <div class="div--adress-select d-flex flex-column gap-2">
+                <label for="">Tỉnh/Thành phố*</label>
+                <select name="" id="">
+                  <option value="1">Thành Phố HCM</option>
+                  <option value="2">Cà Mau</option>
+                  <option value="3">Bình Thuận</option>
+                  <option value="4">Nghệ An</option>
+                </select>
+              </div>
+              <div class="div--box div--adress d-flex flex-column gap-1>
+                <label for="">Địa chỉ*</label>
+                <input type=" text" placeholder="Họ và tên">
+              </div>
+            </div>
+          <label for="checkbox" class="checkbox-style mt-3">
+            <input type="checkbox" name="evondev" id="checkbox" class="checkbox-input" />
+            <div class="checkbox-box">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <label for="checkbox" class="checkbox-label">Giao hàng đến địa chỉ trên</label>
+          </label>
+        </div>
+      </div>
+      <div class="col-lg-5">
+          <div class="container--bill p-3 d-flex flex-column gap-4">
+            <div class="product-bill-container d-flex flex-column gap-3" id="show-bill">
+                <% products.forEach(item => { %>
+                    <div class="products-bill d-flex justify-content-between gap-2 align-items-center">
+                        <div class="products--bill--img--name d-flex gap-3">
+                            <div class="products-bill--img">
+                                <img src="../../public/imges/products/<%= item.image %>" alt="<%= item.name %>">
+                            </div>
+                            <div class="products-bill--name d-flex flex-column gap-1 justify-content-between">
+                                <span class="bill-name"><%= item.name %></span>
+                                <span class="bill-category"><%= item.brand %></span>
+                                <span class="bill-price">
+                                    <%= item.price.toLocaleString("vi-VN", {
+                                        style: "currency",
+                                        currency: "VND"
+                                    }) %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="products-bill--quality d-flex align-items-center">
+                            <span class="bill-quality"><%= item.quantity %></span>
+                        </div>
+                        <div class="delete-all-cart d-flex" id="delete-all-cart-<%= item.id %>">
+                            <i class="fa-solid fa-trash mr-2"></i>
+                            <span>Xóa Sản Phẩm</span>
+                        </div>
+                    </div>
+                <% }) %>
+                
+             
+            </div>
+            <div class="bill--checkout">
+              <div class="container--bill-checkout d-flex flex-column gap-3">
+                <div class="d-flex">
+                  <span class="flex-grow-1">Tổng sản phẩm: </span>
+                  <span class="label-small" id="total-money"><%=total.toLocaleString("vi-VN", {
+                    style: "currency",
+                    currency: "VND"
+                })%></span>
+                </div>
+                <div class="d-flex">
+                  <span class="flex-grow-1">Tổng ship: </span>
+                  <span class="label-small" id="total-money">20.000 đ</span>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex">
+              <span class="flex-grow-1">Tổng Tiền: </span>
+              <span class="label-small" id="total-products">
+                <%=total.toLocaleString("vi-VN", {
+                    style: "currency",
+                    currency: "VND"
+                })%>
+            </span>
+            </div>
+            <a href="/cart/completeCart" type="submit" class="btn--checkout text-center">Hoàn Thành Thanh Toán</a>
+          </div>
+        </form>
+        </div>
+    </div>
+  </div>
+<%-include('./templates/footer.ejs')%>
